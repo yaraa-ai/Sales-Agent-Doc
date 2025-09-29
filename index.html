@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+
+	<style>
+		.logo img {
+			margin-top: 0px !important;
+		}
+
+		#header .desc {
+			margin-top: 8px !important;
+			text-align: start;
+		}
+
+		h6 {
+			font-weight: 500 !important;
+		}
+
+		h5 {
+			font-weight: inherit !important;
+		}
+
+		mark {
+			background: yellow;
+			padding: 0;
+		}
+
+		mark.active {
+			background: orange;
+		}
+
+		.search-container {
+			position: fixed;
+			top: 10px;
+			right: 22px;
+			background: #f8f9fa;
+			border: 1px solid #ccc;
+			border-radius: 22px 0 0 22px;
+			z-index: 9999;
+			display: flex;
+			align-items: center;
+			font-family: Arial, sans-serif;
+		}
+
+		.search-container input[type="text"] {
+			margin: 0 !important;
+			padding: 8px;
+			font-size: 15px;
+			border: none;
+			outline: none;
+			-moz-border-radius: 1px;
+			-webkit-border-radius: 1px;
+			border-radius: 22px;
+			color: #888;
+			margin: 0;
+			width: 100%;
+			max-width: 100%;
+			min-height: 21px;
+			display: block;
+			margin-bottom: 20px;
+			background: #f8f9fa;
+		}
+
+		.search-container input[type="text"]:focus {
+			border: none;
+			outline: none;
+			background: #f8f9fa;
+		}
+
+		.search-controls {
+			display: flex;
+			column-gap: 2px;
+		}
+
+		.search-container button {
+			padding: 0;
+			margin: 0;
+			border-radius: 60%;
+			background-color: #FF9933;
+			cursor: pointer;
+			width: 22px;
+			height: 22px;
+			font-size: 11px;
+
+		}
+
+		.search-container button:hover {
+			background-color: #FF9933;
+		}
+
+		#matchCount {
+			min-width: 50px;
+			text-align: center;
+		}
+	</style>
+	<!-- Basic Page Needs
+         ================================================== -->
+	<meta charset="utf-8">
+	<link rel="icon" href="favicon.png" type="image/gif" sizes="16x16">
+	<title>Yaraa AI Sales Agent - Documentation</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Mobile Specific Metas
+         ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- CSS
+         ================================================== -->
+	<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+
+	<!-- CSS
+         ================================================== -->
+
+</head>
+
+<body>
+	<!-- Primary Page Layout
+         ================================================== -->
+	<div id="wrap" class="colorskin-0">
+		<!-- end-header -->
+
+		<!-- search box -->
+		<div class="search-container">
+			<input type="text" id="searchBox" placeholder="Search text..." />
+			<div class="search-controls">
+				<button id="prevMatch">&#9650;</button>
+				<button id="nextMatch"> &#9660;</button>
+				<span id="matchCount">0 / 0</span>
+			</div>
+		</div>
+
+		<section class="container">
+			<div class="row">
+				<div id="header-sm">
+					<div class="col-md-8 col-md-offset-1 desc">
+						<h4 class="slight">Yaraa AI Sales Agent Dashboard</h4>
+						<h5 class="slight"><small> Documented by yaraai - </small></h5>
+					</div>
+				</div>
+				<div class="col-md-4 col-sm-4 col-xs-12">
+					<aside id="side-nav">
+						<div class="logo"> <img src="images/logo.png" id="img-logo" alt="mojoomla"
+								style="margin-bottom:20px;">
+						</div>
+						<ul id="top-menu">
+							<li><a class="current" href="#Introduction">Introduction</a></li>
+							<li><a href="#GettingStarted">Getting Started</a></li>
+							<li><a href="#Add_Domain">Add Domain</a></li>
+							<li><a href="#AIAgentSetup">AI Agent Setup</a></li>
+							<li><a href="#WebsiteCrawling">Train Agent</a></li>
+							<li><a href="#Deployment">Deployment</a></li>
+							<li><a href="#Dashboard">Dashboard</a></li>
+							<li><a href="#Visitors">Leads</a></li>
+							<li><a href="#VisitorDetails">Leads Details</a></li>
+							<li><a href="#Conversations">Conversations</a></li>
+							<li><a href="#ConversationHistory">Conversation History</a></li>
+							<li><a href="#ConversationView">Conversation View</a></li>
+							<li><a href="#MessageConfiguration">Leads Form</a></li>
+							<li><a href="#HelpSupport">Help & Support</a></li>
+						</ul>
+					</aside>
+				</div>
+
+				<div class="col-md-8 col-sm-8 col-xs-12">
+					<div id="header" class="row">
+
+						<div class="col-md-8 col-sm-8 col-xs-12 desc">
+							<h4 class="slight">Yaraa AI Sales Agent Dashboard </h4>
+							<h5 class="slight"><small> Documented by Yaraa AI - at 01-05-2025</small></h5>
+						</div>
+					</div>
+
+					<section id="Introduction">
+						<hr class="vertical-space2">
+						<h3><strong>A) Introduction</strong></h3>
+						<p>
+							Yaraa AI Sales Agent Dashboard is a powerful platform built to help businesses
+							manage and optimize their AI agent interactions. It allows you to track Leads activity
+							within the ai agent , monitor real-time conversations, and configure ai agent behavior and
+							settings — all from a single intuitive dashboard. An AI Sales Agent is a Smart Voice
+							Assistant That Sells for You — 24/7. It instantly assists customers by providing instant
+							responses, handling inquiries, and guiding potential buyers, all without human involvement.
+							It works like a sales representative, supporting customers anytime.
+						</p>
+						<p>This user guide covers all options that the Yaraa AI Sales Agent Dashboard provides. Please
+							read the
+							documentation
+							carefully as it probably contains answers to most of the questions that may arise. If you
+							feel some aspect is not covered or have some questions, contact us via e-mail
+							yaraa.bizsuite@gmail.com. We will do our best to answer your questions in the shortest time.
+						</p>
+						<hr class="vertical-space2">
+					</section>
+
+					<section id="GettingStarted">
+						<h3><strong>B) Getting Started</strong></h3>
+						<p>
+							To get started with Dashboard, you need to <a
+								href="https://aisalesagent.yaraamanager.com/login">login</a>. You will get your login
+							credentials once you are onboarded(you have added your card details and start your free
+							trial). This is the first step
+							in accessing the platform.
+						</p>
+						<h5><strong>Login</strong></h5>
+						<img alt="Domain Selection" src="images/aimiddleware_images/Login_page.jpg"
+							style="width: -webkit-fill-available;"><br><br>
+						<p>
+							After logging in, you will be directed to the main dashboard. If you haven't added your
+							domain yet, you will be redirected to the setup page to add it.
+						</p>
+						<hr class="vertical-space2">
+						<h5><strong>Setup Wizzard</strong></h5>
+						<img alt="Domain Selection" src="images/aimiddleware_images/Setup-wizzard.jpg"
+							style="width: -webkit-fill-available;"><br><br>
+					</section>
+
+					<section id="Add_Domain">
+						<h3><strong>C) Add Domain</strong></h3>
+						<p>
+							1) To add your domain, click on the "+" icon.
+						</p>
+						<img alt="Domain Selection" src="images/aimiddleware_images/add_domain.png"
+							style="width: -webkit-fill-available;"><br><br>
+						<p>
+							2) After clicking on the "+" button, a popup will appear. Enter your domain name and click
+							on
+							the "Add Domain" button.
+						</p>
+						<img alt="Domain Selection" src="images/aimiddleware_images/add_new_domain.jpg"
+							style="width: -webkit-fill-available;"><br><br>
+						<p>
+							3) After adding your domain, you can setting up your ai agent .
+						</p>
+						<hr class="vertical-space2">
+					</section>
+
+					<section id="AIAgentSetup">
+						<h3><strong>D) AI Agent Setup</strong></h3>
+						<p>
+							The AI Agent Setup section allows you to configure your agent's appearance and
+							functionality.
+						</p>
+						<img alt="AI Agent Setup" src="images/aimiddleware_images/Yaraa-AI-Setup.png"
+							style="width: -webkit-fill-available;"><br><br>
+
+						<h5>Domain Configuration</h5>
+						<p>This section allows you to specify the domain where your AI agent will be deployed.</p>
+
+
+
+						<h5>AI Agent Settings</h5>
+						<p>Configure the appearance and behavior of your ai agent :</p>
+						<ul>
+							<li><strong>Business Name:</strong> Enter your business name that will appear in the
+								ai agent .</li>
+							<li><strong>Business Logo:</strong> Upload your business logo to be displayed in the
+								ai agent .</li>
+							<li><strong>Enable Microphone Mode:</strong> Toggle to allow users to interact with the
+								ai agent using voice.</li>
+							<li><strong>Enable Brief Responses:</strong> Toggle to make the ai agent respond with brief
+								answers.</li>
+							<li><strong>Enable Avatar:</strong> Toggle to display an avatar in the ai agent interface.
+							</li>
+							<li><strong>Audio Speed:</strong> Select the speaking speed of the avatar (Slow, Medium,
+								Fast).</li>
+						</ul>
+
+						<h5>Default Avatar</h5>
+						<ul>
+
+							<li><strong>Avatar Name:</strong> Set a name for your avatar.</li>
+							<li><strong>Avatar Designation:</strong> Set a title for your avatar.</li>
+							<li><strong>Default Idle/Speaking Video:</strong> Preview of the avatar's appearance when
+								idle or speaking.</li>
+						</ul>
+
+						<h5>Generate Avatar</h5>
+						<img alt="AI Chatbot Setup"
+							src="images/aimiddleware_images/Yaraa-AI-Setup-generate-avatar.png"
+							style="width: -webkit-fill-available;"><br><br>
+						<ul>
+
+							<li><strong>Avatar Name:</strong> Set a name for your avatar.</li>
+							<li><strong>Avatar Designation:</strong> Set a title for your avatar.</li>
+							<li><strong>Avatar Image:</strong> Upload an image to generate avatar videos (for Generate
+								Avatar option).</li>
+							<li><strong>Avatar Gender:</strong> Select gender preference for avatar generation.</li>
+							<li><strong>Generated Idle/Speaking Video:</strong> Preview of the avatar's appearance when
+								idle or speaking.</li>
+						</ul>
+
+						<p>After configuring all settings, click the "Save Configuration" button to apply your changes.
+						</p>
+
+						<hr class="vertical-space2">
+					</section>
+
+					<section id="WebsiteCrawling">
+						<h3><strong>E) Train Agent</strong></h3>
+						<p>
+							The Train Agent section allows you to specify URLs from your website that the AI
+							agent should learn from.
+						</p>
+						<img alt="Website Crawling"
+							src="images/aimiddleware_images/Yaraa-AI-Website-Crawling.png"
+							style="width: -webkit-fill-available;"><br><br>
+
+						<h5>Adding URLs for Crawling</h5>
+						<p>This section allows you to add specific URLs from your website that contain information you
+							want your ai agent to learn:</p>
+						<ul>
+							<li><strong>URL List:</strong> Add URLs from your website that contain important information
+								for the ai agent .</li>
+							<li><strong>Delete Option:</strong> Each URL has a delete button to remove it from the list.
+							</li>
+							<li><strong>Add Another URL:</strong> Button to add more URLs to the list.</li>
+						</ul>
+
+						<p>After adding all the URLs you want the ai agent to learn from, click the "Save Crawl URLs"
+							button to initiate the crawling process.</p>
+
+						<hr class="vertical-space2">
+					</section>
+
+					<section id="Deployment">
+						<h3><strong>F) Integrate AI Agent on Your Website</strong></h3>
+						<img alt="Code Snippet Section" src="images/aimiddleware_images/Deploy.png"
+							style="width: -webkit-fill-available;"><br><br>
+						<h4><strong>Option 1: Add via Code Snippet</strong></h4>
+						<p> 1) Copy the code snippet provided under the <strong>"Code Snippet"</strong> section. </p>
+						
+						<p> 2) Open your website’s HTML file and paste the code just before the closing
+							<code>&lt;/body&gt;</code> tag. </p>
+						<p> 3) Save the changes and refresh your website. The AI agent will now appear on your site.
+						</p> <br>
+						<h4><strong>Option 2: Install via WordPress Plugin</strong></h4>
+						<p> 1) Click on the <strong>"Download Plugin"</strong> button in the <strong>"WordPress
+								Plugin"</strong> section. </p> 
+						<p> 2) Log in to your WordPress admin panel and go to <strong>Plugins &gt; Add New &gt; Upload
+								Plugin</strong>. </p>
+						<p> 3) Choose the downloaded plugin file and click <strong>"Install Now"</strong>. </p>
+						<p> 4) After installation, activate the plugin. Your AI agent will now be integrated with your
+							WordPress website. </p>
+						<hr class="vertical-space2">
+					</section>
+
+					<section id="Dashboard">
+						<h3><strong>G) Dashboard</strong></h3>
+						<p>
+							The Dashboard provides an overview of your website's Leads engagement and conversation
+							statistics.
+						</p>
+						<img alt="Dashboard" src="images/aimiddleware_images/Dashboard.png"
+							style="width: -webkit-fill-available;"><br><br>
+
+						<h5>Dashboard Overview</h5>
+						<p>The Dashboard displays key metrics including:</p>
+						<ul>
+							<li><strong>Total Leads (This Month):</strong> Shows the total number of Leads to your
+								website during the current month.</li>
+							<li><strong>Total Conversations (This Month):</strong> Displays the total number of
+								conversations initiated this month.</li>
+							<li><strong>Today's Conversations:</strong> Shows the number of conversations that occurred
+								today.</li>
+							<li><strong>Average Conversations/Day (This Month):</strong> Shows the average number of
+								conversations per day for the current month.</li>
+						</ul>
+
+
+						<h5>Conversations Breakdown</h5>
+						<p>The Dashboard includes a pie chart showing the breakdown of conversations by type:</p>
+						<ul>
+							<li><strong>Text-based Conversations:</strong> Conversations conducted through text chat.
+							</li>
+							<li><strong>Voice-based Conversations:</strong> Conversations conducted through voice
+								interactions.</li>
+						</ul>
+
+						<h5>Monthly Conversations & New Leads Chart</h5>
+						<p>This chart displays the trend of conversations and new Leads over time, allowing you to
+							track engagement patterns throughout the month.</p>
+
+						<h5>Recent Leads</h5>
+						<p>The Dashboard also shows a list of recent Leads with the following information:</p>
+						<ul>
+							<li><strong>Leads:</strong> The name or identifier of the Leads.</li>
+							<li><strong>Email:</strong> The Lead's email address (if available).</li>
+							<li><strong>Phone:</strong> The Lead's phone number.</li>
+							<li><strong>Country:</strong> The country from which the Leads accessed your website.</li>
+							<li><strong>Status:</strong> The current status of the Lead's conversation
+								(Active/Inactive).</li>
+						</ul>
+						<hr class="vertical-space2">
+					</section>
+
+					<section id="Visitors">
+						<h3><strong>H) Leads</strong></h3>
+						<p>
+							The Leads section provides detailed information about all Leads to your ai agent .
+						</p>
+						<img alt="Visitors" src="images/aimiddleware_images/leads.png"
+							style="width: -webkit-fill-available;"><br><br>
+						<h5>Leads Overview</h5>
+						<p>The Leads page displays key metrics including:</p>
+						<ul>
+							<li><strong>Total Leads:</strong> Shows the total number of leads to your website.
+							</li>
+							<li><strong>New Today:</strong> Displays the number of new leads today.</li>
+							<li><strong>Mobile Users:</strong> Shows the number of leads accessing from mobile
+								devices.</li>
+							<li><strong>Average Leads/day:</strong> Shows the average number of Leads per day.
+							</li>
+						</ul>
+
+						<h5>All Leads</h5>
+						<p>The All Leads table provides detailed information about each Lead:</p>
+						<ul>
+							<li><strong>ID:</strong> A unique identifier for each Lead.</li>
+							<li><strong>Name:</strong> The name of the Lead.</li>
+							<li><strong>Contact Info:</strong> Email address and phone number of the Lead.</li>
+							<li><strong>Device:</strong> The type of device used to access your website.</li>
+							<li><strong>Browser/OS:</strong> The browser and operating system used by the Lead.</li>
+							<li><strong>IP Address:</strong> The IP address of the Lead.</li>
+							<li><strong>Date:</strong> The date and time of the visit.</li>
+							<li><strong>Actions:</strong> Options to view details or see all conversations of each
+								Lead.</li>
+						</ul>
+
+						<hr class="vertical-space2">
+					</section>
+
+					<section id="VisitorDetails">
+						<h3><strong>I) Leads Details</strong></h3>
+						<p>
+							The Leads Details modal provides comprehensive information about a specific lead.
+						</p>
+						<img alt="Visitor Details" src="images/aimiddleware_images/leadsDetails.jpg"
+							style="width: -webkit-fill-available;"><br><br>
+						<h5>Personal Information</h5>
+						<ul>
+							<li><strong>Username:</strong> The Lead's username or identifier.</li>
+							<li><strong>Email:</strong> The Lead's email address.</li>
+							<li><strong>Phone:</strong> The Lead's phone number.</li>
+						</ul>
+
+						<h5>Technical Information</h5>
+						<ul>
+							<li><strong>IP Address:</strong> The Lead's IP address.</li>
+							<li><strong>Device:</strong> The device type and specifications used by the Lead.</li>
+							<li><strong>Browser:</strong> The browser used to access your website.</li>
+							<li><strong>Operating System:</strong> The operating system of the Lead's device.</li>
+						</ul>
+
+						<hr class="vertical-space2">
+					</section>
+
+					<section id="Conversations">
+						<h3><strong>J) Conversations</strong></h3>
+						<p>
+							The Conversations section allows you to review all conversations between Leads and your
+							AI agent.
+						</p>
+						<img alt="Conversations" src="images/aimiddleware_images/Conversation.png"
+							style="width: -webkit-fill-available;"><br><br>
+						<h5>Conversations Overview</h5>
+						<p>The Conversations page displays key metrics including:</p>
+						<ul>
+							<li><strong>Total Conversations(This Month):</strong> Shows the total number of
+								conversations.</li>
+							<li><strong>Today's Conversation:</strong> Displays the number of conversations that
+								occurred today.</li>
+							<li><strong>Today's Leads:</strong> Shows the number of leads today.</li>
+							<li><strong>Average Conversations/day(This Month):</strong> Shows the average number of
+								conversations per day.</li>
+						</ul>
+
+						<h5>All Conversations</h5>
+						<p>The All Conversations table provides detailed information about each conversation:</p>
+						<ul>
+							<li><strong>User Information:</strong> The name and contact details of the user.</li>
+							<li><strong>Last Conversation ID:</strong> The ID of the most recent conversation with this
+								user.</li>
+							<li><strong>First Contact:</strong> The date and time of the first interaction with this
+								user.</li>
+							<li><strong>Status:</strong> The current status of the conversation (Active/Inactive).</li>
+							<li><strong>Actions:</strong> Redirects you to the list of conversations for the selected
+								Lead.</li>
+						</ul>
+
+						<hr class="vertical-space2">
+					</section>
+
+					<section id="ConversationHistory">
+						<h3><strong>K) Conversation History</strong></h3>
+						<p>
+							The Conversation History page shows a list of all conversations with a specific Lead.
+						</p>
+						<img alt="Conversation History"
+							src="images/aimiddleware_images/Conversation_History.jpg"
+							style="width: -webkit-fill-available;"><br><br>
+						<h5>User Information</h5>
+						<p>The top section displays information about the lead:</p>
+						<ul>
+							<li><strong>Name:</strong> The Lead's name or identifier.</li>
+							<li><strong>Email:</strong> The Lead's email address (if available).</li>
+							<li><strong>Phone:</strong> The Lead's phone number.</li>
+							<li><strong>First Seen:</strong> The date and time when the Lead was first detected.</li>
+							<li><strong>Device:</strong> The type of device used by the Lead.</li>
+							<li><strong>Browser:</strong> The browser used to access your website.</li>
+							<li><strong>IP Address:</strong> The Lead's IP address.</li>
+						</ul>
+
+						<h5>Conversation History</h5>
+						<p>The Conversation History section shows:</p>
+						<ul>
+							<li><strong>Conversation ID:</strong> The unique identifier for each conversation.</li>
+							<li><strong>Number of Messages:</strong> The total number of messages in the conversation.
+							</li>
+							<li><strong>Status:</strong> The current status of the conversation (Active/Inactive).</li>
+							<li><strong>Start Date and Time:</strong> When the conversation began.</li>
+						</ul>
+
+						<hr class="vertical-space2">
+					</section>
+
+					<section id="ConversationView">
+						<h3><strong>L) Conversation View</strong></h3>
+						<p>
+							The Conversation View page displays the actual conversation between a Leads and the AI
+							agent .
+						</p>
+						<img alt="Conversation View" src="images/aimiddleware_images/Yaraa-AI-Conversations-view.png"
+							style="width: -webkit-fill-available;"><br><br>
+
+
+						<h5>Conversation</h5>
+						<p>The main section shows the conversation between the Leads and the AI assistant:</p>
+						<ul>
+							<li><strong>User Messages:</strong> Messages from the Leads appear on the left with the
+								Lead's name.</li>
+							<li><strong>AI Assistant Messages:</strong> Responses from the AI agent appear on the
+								right with "AI Assistant" label.</li>
+							<li><strong>Timestamps:</strong> Each message includes a timestamp showing when it was sent.
+							</li>
+						</ul>
+
+
+						<hr class="vertical-space2">
+					</section>
+
+
+
+					<section id="MessageConfiguration">
+						<h3><strong>M) Leads Form</strong></h3>
+						<p>
+							The Leads Form section allows you to customize the messages that your AI agent
+							sends to Leads during different stages of the conversation.
+						</p>
+						<img alt="Message Configuration"
+							src="images/aimiddleware_images/Yaraa-AI-Message-Configuration.png"
+							style="width: -webkit-fill-available;"><br><br>
+
+						<h5>Types of Messages</h5>
+						<p>You can customize the following types of messages:</p>
+						<ul>
+							<li><strong>Welcome Message:</strong> The first message Leads see when they interact with
+								the ai agent .</li>
+							<li><strong>Name Request Message:</strong> Message asking Leads to provide their name.
+							</li>
+							<li><strong>Welcome Back Message:</strong> Message shown to returning Leads after they've
+								provided their name.</li>
+							<li><strong>Email Request Message:</strong> Message asking Leads to provide their email
+								address.</li>
+							<li><strong>Phone Request Message:</strong> Message asking Leads to provide their phone
+								number.</li>
+						</ul>
+
+						<h5>Default Messages</h5>
+						<p>The system provides default messages that you can customize:</p>
+						<ul>
+							<li><strong>Welcome Message:</strong> "Hello! I'm Dr. Shah, your AI assistant from
+								NiftyHMS."</li>
+							<li><strong>Name Request Message:</strong> "Could you please share your name with me?"</li>
+							<li><strong>Welcome Back Message:</strong> "Hello {name}! How may I assist you today?"</li>
+							<li><strong>Email Request Message:</strong> "Pleasure to meet you, {name}! Could you share
+								your email address?"</li>
+							<li><strong>Phone Request Message:</strong> "Thank you! Lastly, may I have your Mobile
+								Number?"</li>
+						</ul>
+
+						<h5>Using Name Placeholders</h5>
+						<p>You can use the <strong>{name}</strong> placeholder in your messages. This will be
+							automatically replaced with the Lead's name during the conversation.</p>
+
+						<h5>Saving Your Configuration</h5>
+						<p>After customizing your messages, click the "Save Configuration" button to apply your changes.
+						</p>
+
+						<hr class="vertical-space2">
+					</section>
+
+					<section id="HelpSupport">
+						<h3><strong>N) Help & Support</strong></h3>
+						<p>
+							The Help & Support section provides answers to frequently asked questions (FAQs) about using
+							Yaraa AI Sales Agent.
+						</p>
+						<img alt="Help and Support" src="images/aimiddleware_images/Yaraa-AI-Help-Support.png"
+							style="width: -webkit-fill-available;"><br><br>
+
+						<h5>Frequently Asked Questions</h5>
+						<p>The FAQ section includes answers to common questions about using Yaraa AI Sales Agent:</p>
+						<ul>
+							<li><strong>How can I view Leads details?</strong> Information about accessing Leads
+								information.</li>
+							<li><strong>How do I set up the ai agent for my website?</strong> Instructions for
+								configuring the ai agent .</li>
+							<li><strong>Can I customize the ai agent 's messages?</strong> Information about message
+								customization.</li>
+							<li><strong>How can I view past conversations?</strong> Instructions for accessing
+								conversation history.</li>
+							<li><strong>What do conversation statuses mean?</strong> Explanation of different
+								conversation status indicators.</li>
+							<li><strong>What Leads information is tracked?</strong> Details about the Leads data
+								collected.</li>
+							<li><strong>How does the website crawling feature work?</strong> Explanation of the crawling
+								functionality.</li>
+							<li><strong>What does "Default Avatar" mean?</strong> Information about avatar options.</li>
+						</ul>
+
+						<h5>Getting Additional Help</h5>
+						<p>If you need further assistance, you can contact support at <a
+								href="mailto:yaraa.bizsuite@gmail.com">yaraa.bizsuite@gmail.com</a>.</p>
+
+						<p>© Copyright 2021-2025 | Yaraa | All Rights Reserved</p>
+
+						<hr class="vertical-space2">
+					</section>
+
+					<!-- start-footer-->
+					<div id="footer-sm"> © 2025 Mojoomla All Rights Reserved. </div>
+					<!-- end-footer -->
+					<div class="white-space"></div>
+				</div>
+			</div>
+		</section>
+		<!-- container -->
+		<!-- end-footer -->
+		<span id="scroll-top"><a class="scrollup"></a></span>
+	</div>
+	<!-- end-wrap -->
+	<!-- End Document
+         ================================================== -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.jcarousel.min.js"></script>
+	<script type="text/javascript" src="js/doubletaptogo.js"></script>
+	<script type="text/javascript" src="js/cube-custom.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script> -->
+	<script src="js/jquery.mark.min.js"></script>
+	<script src="js/search.js"></script>
+</body>
+
+</html>
